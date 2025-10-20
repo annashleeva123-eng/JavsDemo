@@ -17,31 +17,34 @@ public class Homework3 {
 
         // Заполнение случайными числами
         for (int i = 0; i < size; i++) {
-            mass[i] = random.nextInt(50);
+            mass[i] = random.nextInt(50); // случайные числа от 0 до 49
         }
 
         // Вывод массива
         System.out.print("Случайные числа массива: ");
         for (int i = 0; i < size; i++) {
-            System.out.println(mass[i] + " ");
+            System.out.print(mass[i] + " ");
         }
-// Поиск макс и мин значения
-        int minInd = 0;
-        int maxInd = 0;
+
+        // Поиск минимального и максимального значений и их индексов
+        int min = mass[0];
+        int max = mass[0];
+        int minIndex = 0;
+        int maxIndex = 0;
 
         for (int i = 1; i < size; i++) {
-            if (mass[i] < minInd) {
-                minInd = mass[i];
+            if (mass[i] < min) {
+                min = mass[i];
+                minIndex = i;
             }
-            if (mass[i] > maxInd) {
-                maxInd = mass[i];
+            if (mass[i] > max) {
+                max = mass[i];
+                maxIndex = i;
             }
         }
 
-        //результат
-        System.out.println("Минимальный индекс: " + minInd);
-        System.out.println("Максимальный индекс: " + maxInd);
+        // Результат
+        System.out.println("Минимальное значение: " + min + " (индекс " + minIndex + ")");
+        System.out.println("Максимальное значение: " + max + " (индекс " + maxIndex + ")");
     }
-
 }
-//я не поняла что значит найти индекс :) сделала похоже тож самое что с макс и мин. Давай обсудим вместе
